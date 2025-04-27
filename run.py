@@ -10,6 +10,7 @@ def load_model(scale, device):
         num_block=23, num_grow_ch=32, scale=scale
     )
 
+    # 모델 경로는 배율에 맞게 설정
     model_path = f'RealESRGAN_x{scale}.pth'
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"모델 파일이 없습니다: {model_path}")
@@ -21,21 +22,33 @@ def load_model(scale, device):
 
     return model
 
+# 이미지 크기를 scale의 배수로 맞추기 위해 크롭해주는 함수
+def mod_crop(img, scale): 
+    w, h = img.size
+    w = w - (w % scale)
+    h = h - (h % scale)
+    img = img.crop((0, 0, w, h))
+    return img
+
 def upscale_image(input_path, output_path, scale=4):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = load_model(scale, device)
 
     img = Image.open(input_path).convert('RGB')
+
+    # scale에 맞게 이미지 크기를 배수로 맞춰줌
+    img = mod_crop(img, scale)
+
     img_tensor = to_tensor(img).unsqueeze(0).to(device)
 
     with torch.no_grad():
         output_tensor = model(img_tensor)
-    
+
     output_tensor = output_tensor.squeeze(0).clamp(0, 1).cpu()
     output_img = to_pil_image(output_tensor)
 
     output_img.save(output_path)
-    print(f'✅ 업스케일 완료! 저장 경로: {output_path}')
+    print(f'업스케일 완료! 저장 경로: {output_path}')
 
 if __name__ == '__main__':
     import argparse

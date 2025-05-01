@@ -39,7 +39,7 @@ python upscale.py input_image.jpg output_image_x4.jpg --scale 4
 
 ## 주의사항
 
-- `RealESRGAN`은 고사양의 GPU에서 최적화된 성능을 발휘합니다. CPU에서는 처리 속도가 느릴 수 있습니다.
+- `RealESRGAN`은 고사양의 GPU에서 최적화된 성능을 발휘합니다. CPU에서는 처리 속도가 느릴 수 있습니다. 따라서 본 코드는 CUDA코어를 사용을 권장하고 있습니다.
 - `huggingface_hub` 라이브러리와 관련된 문제는 버전 문제로 발생할 수 있습니다. 이를 해결하기 위해 `huggingface_hub` 라이브러리의 버전을 `0.11.0`으로 다운그레이드하거나 최신 버전으로 업데이트할 수 있습니다.
 
 ## Examples

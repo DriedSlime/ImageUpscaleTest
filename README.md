@@ -8,17 +8,13 @@
 - `weights/`: RealESRGAN 모델 가중치 파일이 저장된 폴더.
 - `RealESRGAN/`: `RealESRGAN`의 코드 및 모델 파일을 포함한 폴더.
 
-## 설치 방법
-
-이 프로젝트를 로컬 환경에 설치하려면, 먼저 필요한 패키지를 설치해야 합니다. 아래의 단계에 따라 설치해 주세요.
-
-### 1. 저장소 클론
+### 클론
 
 ```bash
 git https://github.com/ai-forever/Real-ESRGAN.git
 ```
 
-### 2. `huggingface_hub` 라이브러리 설치
+### `huggingface_hub` 라이브러리 설치
 
 만약 `huggingface_hub` 라이브러리에서 문제가 발생하면, 아래 명령어로 버전을 맞춰 설치할 수 있습니다:
 

@@ -22,20 +22,31 @@ git https://github.com/ai-forever/Real-ESRGAN.git
 pip install huggingface_hub==0.11.0
 ```
 
-### 이미지 업스케일링
+### PyTorch GPU 버전 문제
 
-이미지를 2배, 4배, 또는 8배로 업스케일링하려면, 아래의 명령어를 실행하세요:
+설치한 PyTorch가 CPU 전용 버전일 가능성 있음.
 
-##### 예시
-```bash
-python upscale.py input_image.jpg output_image_x4.jpg --scale 4
+```python
+import torch
+print(torch.version.cuda)        # CUDA 지원 버전
+print(torch.cuda.is_available()) # True/False
 ```
 
-이 명령어는 `input_image.jpg` 이미지를 4배 업스케일링하여 `output_image_x4.jpg`로 저장합니다.
+GPU를 인식하지 못한다면
+```
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+```
 
-## 지원되는 스케일 범위
+### 이미지 업스케일링
 
-- `2x`, `4x`, `8x` 스케일이 지원됩니다.
+이미지를 2배, 4배, 또는 8배로 업스케일링 함수 실행:
+
+##### 예시
+```python
+upscale_image("input.jpg", "output/input_x4.jpg", scale=4)
+```
+원하는 output폴더/파일명 지정 가능
+scale 파라미터로 배수 2, 4, 8로 조절 가능
 
 ## 주의사항
 
@@ -49,10 +60,13 @@ input image
 
 x2 upscale image   
 ![image](/ouput/output_x2.jpg)
+2배는 품질도 눈에 띄게 좋아지고 뭉게지는 표현이 거의 없음
 
 x4 upscale image   
 ![image](/ouput/output_x4.jpg)
+4배는 해상도는 높아졌으나 뭉게지는 부분이 보임
 
 x8 upscale image  
 ![image](/ouput/output_x8.jpg)
+이미지가 좋아졌다고 보기 힘들 정도의 결과물
 

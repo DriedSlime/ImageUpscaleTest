@@ -60,13 +60,13 @@ input image
 
 x2 upscale image   
 ![image](/output/output_x2.jpg)
-2배는 품질도 눈에 띄게 좋아지고 뭉게지는 표현이 거의 없음
+##### 2배는 품질도 눈에 띄게 좋아지고 뭉게지는 표현이 거의 없음
 
 x4 upscale image   
 ![image](/output/output_x4.jpg)
-4배는 해상도는 높아졌으나 뭉게지는 부분이 보임
+##### 4배는 해상도는 높아졌으나 뭉게지는 부분이 보임
 
 x8 upscale image  
 ![image](/output/output_x8.jpg)
-이미지가 좋아졌다고 보기 힘들 정도의 결과물
+##### 이미지가 좋아졌다고 보기 힘들 정도의 결과물
 

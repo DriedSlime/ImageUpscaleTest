@@ -43,7 +43,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 ##### 예시
 ```python
-upscale_image("input.jpg", "output/input_x4.jpg", scale=4)
+upscale_image("image.jpg", "output/image_x4.jpg", scale=4)
 ```
 원하는 output폴더/파일명 지정 가능
 scale 파라미터로 배수 2, 4, 8로 조절 가능
@@ -59,14 +59,14 @@ input image
 ![image](input.jpg)
 
 x2 upscale image   
-![image](/ouput/output_x2.jpg)
+![image](/output/output_x2.jpg)
 2배는 품질도 눈에 띄게 좋아지고 뭉게지는 표현이 거의 없음
 
 x4 upscale image   
-![image](/ouput/output_x4.jpg)
+![image](/output/output_x4.jpg)
 4배는 해상도는 높아졌으나 뭉게지는 부분이 보임
 
 x8 upscale image  
-![image](/ouput/output_x8.jpg)
+![image](/output/output_x8.jpg)
 이미지가 좋아졌다고 보기 힘들 정도의 결과물
 

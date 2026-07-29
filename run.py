@@ -21,7 +21,7 @@ def upscale_image(input_path, output_path, scale=4):
     return output_path
 
 # 실행 결과물 바로 폴더에 저장
-upscale_image("input.jpg", "output/input_x4.jpg", scale=4)
+upscale_image("input.jpg", "output/input_x2.jpg", scale=2)
 
 # if __name__ == '__main__':
 #     # cmd로 인자 입력 받기

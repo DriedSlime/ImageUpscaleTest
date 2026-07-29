@@ -28,14 +28,14 @@ pip install huggingface_hub==0.11.0
 
 ### 이미지 업스케일링
 
-이미지를 2배, 4배, 또는 8배로 업스케일링하려면, 아래의 명령어를 실행하세요:
+이미지를 2배, 4배, 또는 8배로 업스케일링하려면, 코드 후정 실행:
 
 ##### 예시
-```bash
-python upscale.py input_image.jpg output_image_x4.jpg --scale 4
+```python
+upscale_image("input.jpg", "output/input_x2.jpg", scale=2)
 ```
 
-이 명령어는 `input_image.jpg` 이미지를 4배 업스케일링하여 `output_image_x4.jpg`로 저장합니다.
+이 명령어는 `input_image.jpg` 이미지를 4배 업스케일링하여 `output_image_x2.jpg`로 저장합니다.
 
 ## 지원되는 스케일 범위
 
